@@ -1,7 +1,7 @@
 from decouple import config
 from random import randint
 
-list_slot = randint(1, 20)
+list_slot = randint(1, 10)
 mymoney = config('MY_MONEY', default = 1000, cast = int )
 game_over = True
 
@@ -30,13 +30,13 @@ class GameCasino:
         global list_slot
         while 1:
             try:
-                bet_user = int(input('Введите число вашей ставки ( 1 до 20 ): '))
+                bet_user = int(input('Введите число вашей ставки ( 1 до 10 ): '))
 
-                if 1 <= bet_user <= 20:
+                if 1 <= bet_user <= 10:
                     return bet_user
 
                 else:
-                    print('Введите число от 1 до 20')
+                    print('Введите число от 1 до 10')
 
             except ValueError:
                 print('Введите коректное число ( только цифры )')
